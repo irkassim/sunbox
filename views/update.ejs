@@ -1,0 +1,43 @@
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <div class="create-blog content">
+      <form
+        action="/blogs/<%=blog._id %>"
+        data-doc="<%= blog._id %>"
+        method="post"
+      >
+        <label for="title">Blog title:</label>
+        <input
+          class="title"
+          type="text"
+          id="title"
+          name="title"
+          value="<%= blog.title %>"
+          required
+        />
+        <label for="snippet">Blog snippet:</label>
+        <input
+          type="text"
+          class="snippet"
+          id="snippet"
+          name="snippet"
+          value="<%= blog.snippet %>"
+          required
+        />
+        <label for="body">Blog body:</label>
+        <textarea
+          id="body"
+          class="body"
+          name="body"
+          value="<%= blog.body %>"
+        ></textarea>
+        <button>Edit</button>
+      </form>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+
+    <script></script>
+  </body>
+</html>
